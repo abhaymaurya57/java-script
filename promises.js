@@ -4,7 +4,7 @@ const promiseOne = new Promise(function(resolve,reject){
     setTimeout(function(){
         console.log('Async task is complete');
         resolve()
-    },2000)
+    },1000)
 })
 
 promiseOne.then(function(){
@@ -16,7 +16,7 @@ new Promise(function(resolve,reject){
     setTimeout(function(){
         console.log("Async task 2")
         resolve()
-    },4000)
+    },1000)
 }).then(function(){
     console.log("Async 2 resolve")
 })
@@ -25,8 +25,32 @@ new Promise(function(resolve,reject){
 const promisethree =new Promise(function(resolve,reject){
     setTimeout(function(){
         resolve({username:"chai",email:"abh.mry1@gmail.com"})
-    },6000)
+    },1000)
 })
 promisethree.then(function(user){
     console.log(user)
+})
+
+//********************************
+const promiseFour = new promise(function(resolve,reject){
+    setTimeout(function(){
+        let error = true
+        if(!error){
+            resolve({username:"Abhay",password:'dsafdaf'})
+        }else{
+            reject('ERROR: something elese')
+        }
+    },1000)
+})
+promiseFour
+.then((user)=>{
+    console.log(user);
+    return user.username
+    
+}).then((username)=>{
+    console.log(username);
+    
+}).catch(function(error){
+    console.log(error);
+    
 })
