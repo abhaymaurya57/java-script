@@ -1,11 +1,5 @@
-// immediate Invoked Function Expression (IIFE)
-
-(function chai(){
-    // name IIFE
+// immediate invoke function expression (IIFE)
+function Chai(){
     console.log(`DB CONNECTED`);
-
-})();
-
-((name) => {
-    console.log(`DB CONNECTED TWO ${name}`);
-})('Abhay') 
+}
+Chai()
